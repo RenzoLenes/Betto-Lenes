@@ -216,9 +216,11 @@ video {
     flex-direction: column;
     color: #0D519B
 }
-#footer .right .title{
+
+#footer .right .title {
     padding-bottom: 1rem;
 }
+
 #footer .right #form-promotions {
     font-family: "Carme", sans-serif;
 }
@@ -425,3 +427,125 @@ video {
     transition: all .7s cubic-bezier(.19, 1, .22, 1);
     transform: scaleX(100%)
 }
+
+
+#main-product-view {
+    .top {
+        display: flex;
+        justify-content: flex-start;
+        align-items: flex-start;
+        position: relative;
+        margin-top: 2rem;
+        margin-bottom: 2rem;
+
+        .left {
+            display: flex;
+            position: relative;
+
+            .slides {
+                width: 100%;
+                overflow: hidden;
+
+                .inner {
+                    display: flex;
+                    justify-content: space-between;
+                    flex-wrap: wrap;
+                    row-gap: 4px;
+
+                    .slide {
+                        display: flex;
+                        width: calc(50% - 2px);
+                        overflow: hidden;
+
+                        img {
+                            width: auto;
+                            display: flex;
+                            object-fit: cover;
+                        }
+                    }
+                }
+            }
+        }
+
+        .right {
+            width: 25vw;
+            margin-left: 6vw;
+            top: 20px;
+
+            .header {
+                margin-bottom: 1.5vw;
+                width: 70%;
+            }
+
+            .price-wrapper {
+                display: flex;
+                flex-direction: column;
+
+                .price {
+                    font-size: 20px;
+                }
+            }
+
+            .option-drawer {
+                .options-wrapper {
+                    display: flex;
+                    flex-direction: column;
+                    margin-bottom: 1.5vw;
+
+                    .option-title {
+                        margin-top: 1.5vw;
+                        margin-bottom: 1.5vw;
+                    }
+
+                    .options {
+                        display: flex;
+                        justify-content: space-between;
+                        gap: 8px;
+
+                        .option {
+                            padding: 2px;
+                            flex: 1;
+                            border: 1px solid #000;
+                            position: relative;
+                            overflow: hidden;
+                            max-width: 158px;
+                        }
+
+                        .btn.white {
+                            color: #000;
+                            background: #fff;
+                            width: fit-content;
+                            height: 49px;
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            text-align: center;
+                        }
+
+                        .option.selected {
+                            background-color: #000;
+                            color: #fff;
+                        }
+                    }
+                }
+            }
+
+            .atc-form .btn {
+                width: 100%;
+            }
+
+            .btn.black {
+                color: #fff;
+                background: #000;
+                height: 49px;
+                border-radius: 3px;
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+            }
+        }
+    }
+}
+
+/*# sourceMappingURL=test.css.map */

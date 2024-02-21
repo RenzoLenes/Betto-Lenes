@@ -5,39 +5,39 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Betto Lenes</title>
-    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="../css/styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Carme&display=swap" rel="stylesheet">
 </head>
-
 <body>
     <header>
         <nav id="nav">
             <div class="left">
-                <a href=""><img src="./assets/img/logo-betto.png" alt=""></a>
-                <a href="">HOME</a>
+                <a href=""><img src="../assets/img/logo-betto.png" alt=""></a>
+                <a href="../index.html">HOME</a>
                 <a href="">ABOUT</a>
                 <a href="">CONTACT</a>
             </div>
             <div class="right">
                 <a href="">ACCOUNT</a>
-                <button id="bag">
+                <button>
                     <span>BAG</span>
-                    <img src="./assets/img/bag.svg" alt="">
+                    <img src="../assets/img/bag.svg" alt="">
                 </button>
             </div>
 
         </nav>
     </header>
-    <div class="background">
-        <video src="./assets/video/background-video.mp4" autoplay loop muted playsinline></video>
-    </div>
 
-    <section class="wrap-products">
-        <h2>NEW ARRIVALS</h2>
-        <div class="products" id="products-container"></div>
-    </section>
+    <main class="main-bag">
+        <div class="order">
+            <h2>Shopping Bag</h2>
+            <ul id="order-list"></ul>
+            <p id="total-price">Total: $0.00</p>
+        </div>
+    </main>
+
     <footer id="footer">
         <div class="footer-wrapper c-24">
             <div class="left">
@@ -88,24 +88,11 @@
         </div>
         <div class="bottom c-24">
             <p class="text">2024</p>
-            <a class="text" href="#"><img height="30" src="./assets/img/logo-betto.png" alt=""></a>
+            <a class="text" href="#"><img height="30" src="../assets/img/logo-betto.png" alt=""></a>
         </div>
     </footer>
 
-    <script>
-        // Obtener el botón por su ID
-        const miBoton = document.getElementById('bag');
-    
-        // Agregar un evento clic al botón
-        miBoton.addEventListener('click', function () {
-            // Redirigir a otra página
-            window.location.href = './pages/bag.html';
-        });
-    </script>
-    
-
-    <script src="./scripts/loadProducts.js"></script>
-
+   
+    <script src="../scripts/summary.js"></script>
 </body>
-
 </html>

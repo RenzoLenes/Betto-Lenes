@@ -393,4 +393,104 @@ video {
   transform: scaleX(100%);
 }
 
+#main-product-view .top {
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  position: relative;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+#main-product-view .top .left {
+  display: flex;
+  position: relative;
+}
+#main-product-view .top .left .slides {
+  width: 100%;
+  overflow: hidden;
+}
+#main-product-view .top .left .slides .inner {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  row-gap: 4px;
+}
+#main-product-view .top .left .slides .inner .slide {
+  display: flex;
+  width: calc(50% - 2px);
+  overflow: hidden;
+}
+#main-product-view .top .left .slides .inner .slide img {
+  width: auto;
+  display: flex;
+  object-fit: cover;
+}
+#main-product-view .top .right {
+  width: 25vw;
+  margin-left: 6vw;
+  top: 20px;
+}
+#main-product-view .top .right .header {
+  margin-bottom: 1.5vw;
+  width: 70%;
+}
+#main-product-view .top .right .price-wrapper {
+  display: flex;
+  flex-direction: column;
+}
+#main-product-view .top .right .price-wrapper .price {
+  font-size: 20px;
+}
+#main-product-view .top .right .option-drawer .options-wrapper {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1.5vw;
+}
+#main-product-view .top .right .option-drawer .options-wrapper .option-title {
+  margin-top: 1.5vw;
+  margin-bottom: 1.5vw;
+}
+#main-product-view .top .right .option-drawer .options-wrapper .options {
+  display: flex;
+  justify-content: space-between;
+  gap: 8px;
+}
+#main-product-view .top .right .option-drawer .options-wrapper .options .option {
+  padding: 2px;
+  flex: 1;
+  border: 1px solid #000;
+  position: relative;
+  overflow: hidden;
+  max-width: 158px;
+}
+#main-product-view .top .right .option-drawer .options-wrapper .options .btn.white {
+  color: #000;
+  background: #fff;
+  width: fit-content;
+  height: 49px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+#main-product-view .top .right .option-drawer .options-wrapper .options .option.selected {
+  background-color: #000;
+  color: #fff;
+}
+#main-product-view .top .right .atc-form .btn {
+  width: 100%;
+}
+#main-product-view .top .right .btn.black {
+  color: #fff;
+  background: #000;
+  height: 49px;
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+
+
 /*# sourceMappingURL=styles.css.map */

@@ -1,11 +1,11 @@
 const products = [
-    { id: 1, name: "CAMISA SLIM FIT AZUL MARINO", size: ["S", "M", "L"], price: 120 },
-    { id: 2, name: "CAMISA SLIM FIT CELESTE", size: ["S", "M", "L"], price: 120 },
-    { id: 3, name: "CAMISA SLIM FIT VERDE OSCURO", size: ["S", "M", "L"], price: 120 },
-    { id: 4, name: "POLERA OVERSIZE GUINDA", size: ["S", "M", "L"], price: 180 },
-    { id: 5, name: "POLO OVERSIZE NEGRO", size: ["S", "M", "L"], price: 100 },
-    { id: 6, name: "POLO OVERSIZE GRIS", size: ["S", "M", "L"], price: 100 }
-]
+    { id:1, name: "CAMISA SLIM FIT AZUL MARINO",size: ["S", "M", "L","XL","XXL"], price: 120, images: ["./assets/img/producto-1.1.png", "./assets/img/producto-1.2.png"] },
+    { id:2, name: "CAMISA SLIM FIT CELESTE",size: ["S", "M", "L","XL","XXL"], price: 120, images: ["./assets/img/producto-2.1.png", "./assets/img/producto-2.2.png"] },
+    { id:3, name: "CAMISA SLIM FIT VERDE OSCURO",size: ["S", "M", "L","XL","XXL"], price: 120, images: ["./assets/img/producto-3.1.png", "./assets/img/producto-3.2.png"] },
+    { id:4, name: "POLERA OVERSIZE GUINDA",size: ["S", "M", "L","XL","XXL"], price: 180, images: ["./assets/img/producto-4.1.png", "./assets/img/producto-4.2.png"] },
+    { id:5, name: "POLO OVERSIZE NEGRO",size: ["S", "M", "L","XL","XXL"], price: 100, images: ["./assets/img/producto-5.1.png", "./assets/img/producto-5.2.png"] },
+    { id:6, name: "POLO OVERSIZE GRIS",size: ["S", "M", "L","XL","XXL"], price: 100, images: ["./assets/img/producto-6.1.png", "./assets/img/producto-6.2.png"] },
+];
 
 class Order {
     constructor() {
@@ -19,18 +19,21 @@ class Order {
         return products.find(product => product.id === productId);
     }
 
-    addProduct(product, quantity = 1) {
+    addProduct(product, size, quantity = 1) {
         const productId = product.id
 
         if (this.validateProductId(productId)) {
-            if (!this.products[productId]) {
-                this.products[productId] = {
-                    product, quantity
+            const key = `${productId}-${size}`; // Utilizar productId y size en la clave
+            if (!this.products[key]) {
+                this.products[key] = {
+                    product, size, quantity
                 };
-                console.log(`${quantity} unit(s) of "${product.name} added to order"`);
+                console.log(`${quantity} unit(s) of "${product.name}" (Size: ${size}) added to order`);
+                this.saveOrderToLocalStorage();
             } else {
-                this.products[productId].quantity += quantity;
-                console.log(`${quantity} unit(s) of "${product.name} added to order"`);
+                this.products[key].quantity += quantity;
+                console.log(`${quantity} unit(s) of "${product.name}" (Size: ${size}) added to order`);
+                this.saveOrderToLocalStorage();
             }
 
         } else {
@@ -38,22 +41,34 @@ class Order {
         }
     }
 
-    removeProductById(productId,quantity=1) {
-        const id = productId;
-        if (this.validateProductId(id)) {
-            const productEntry = this.products[id];
+    saveOrderToLocalStorage() {
+        localStorage.setItem('order', JSON.stringify(this.products));
+    }
+
+    loadOrderFromLocalStorage() {
+        const savedOrder = localStorage.getItem('order');
+        if (savedOrder) {
+            this.products = JSON.parse(savedOrder);
+        }
+    }
+
+    removeProductById(productId, size, quantity = 1) {
+        const key = `${productId}-${size}`;
+        if (this.products[key]) {
+            const productEntry = this.products[key];
             if (productEntry) {
                 if (productEntry.quantity > quantity) {
                     productEntry.quantity -= quantity;
-                    console.log(`${quantity} unidad(es) de "${productEntry.product.name}" eliminada(s) de la orden.`);
+                    console.log(`${quantity} unit(s) of "${productEntry.product.name}" (Size: ${productEntry.size}) removed from order.`);
                 } else {
-                    delete this.products[id];
+                    delete this.products[key];
                 }
+                this.saveOrderToLocalStorage();
             } else {
                 console.log('Product not found in the order');
             }
         } else {
-            console.log("Id not found")
+            console.log("Product not found in the order");
         }
     }
 
@@ -101,6 +116,10 @@ class Order {
         });
     }
 
+    getOrderSummary() {
+        return this.products;
+    }
+
 }
 
 function menuProductos() {
@@ -137,5 +156,5 @@ function menuProductos() {
 
 // Uso de la clase Order
 const order = new Order();
+order.loadOrderFromLocalStorage();
 
-menuProductos();
