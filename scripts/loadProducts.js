@@ -50,8 +50,8 @@ products.forEach(product => {
         localStorage.setItem('selectedProduct', JSON.stringify(selectedProduct));
     
         // Redireccionar a la página de vista de producto
-        window.location.href = window.location.pathname.replace(/\/[^/]+$/, '/pages/product-view.html');
-
+        const repo='PreEntrega2Lenes';
+        window.location.href = repo + `/pages/product-view.html`;
     });
 
     productsContainer.appendChild(productDiv);
