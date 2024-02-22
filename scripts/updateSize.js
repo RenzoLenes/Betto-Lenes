@@ -138,7 +138,7 @@ document.addEventListener('DOMContentLoaded', function () {
             localStorage.setItem('selectedProduct', JSON.stringify(selectedProduct));
 
             // Redireccionar a la página de vista de producto
-            const repo='PreEntrega2Lenes';
+            const repo='';
             window.location.href = repo + `/pages/product-view.html`;
         });
 
