@@ -85,3 +85,68 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 
 });
+
+document.addEventListener('DOMContentLoaded', function () {
+    // Obtener el contenedor de productos relacionados
+    const relatedProductsContainer = document.getElementById('related-products-container');
+
+    // Función para obtener productos aleatorios excluyendo el producto seleccionado
+    function getRandomProductsExcluding(products, quantity, excludedProduct) {
+        const filteredProducts = products.filter(product => product.id !== excludedProduct.id);
+        const shuffledProducts = filteredProducts.sort(() => 0.5 - Math.random());
+        return shuffledProducts.slice(0, quantity);
+    }
+
+    // Obtener el producto seleccionado almacenado en localStorage
+    const selectedProduct = JSON.parse(localStorage.getItem('selectedProduct'));
+
+    // Obtener 4 productos aleatorios excluyendo el producto seleccionado
+    const randomProducts = getRandomProductsExcluding(products, 3, selectedProduct);
+
+    // Iterar sobre los productos aleatorios y agregarlos al contenedor
+    randomProducts.forEach(product => {
+        const productDiv = document.createElement("div");
+        productDiv.classList.add("product");
+
+        const imageElement = document.createElement("img");
+        imageElement.classList.add("original-image");
+        imageElement.src = '.' + product.images[0];
+        productDiv.appendChild(imageElement);
+
+        const hoverImageElement = document.createElement("img");
+        hoverImageElement.classList.add("hover-image");
+        hoverImageElement.src = '.' + product.images[1];
+        productDiv.appendChild(hoverImageElement);
+
+        const nameElement = document.createElement("p");
+        nameElement.classList.add("product-name");
+        nameElement.textContent = product.name;
+        productDiv.appendChild(nameElement);
+
+        const priceElement = document.createElement("p");
+        priceElement.classList.add("product-price")
+        priceElement.textContent = product.price + " " + moneda;
+        productDiv.appendChild(priceElement);
+
+        // Agregar evento clic para redirigir a la plantilla product-view con el producto seleccionado
+        productDiv.addEventListener('click', function () {
+            // Crear un objeto con la información del producto seleccionado
+            const selectedProduct = {
+                id: product.id,
+                name: product.name,
+                price: product.price,
+                image1: product.images[0],
+                image2: product.images[1],
+                size: product.size
+            };
+
+            // Convertir el objeto a cadena JSON y almacenarlo en localStorage
+            localStorage.setItem('selectedProduct', JSON.stringify(selectedProduct));
+
+            // Redireccionar a la página de vista de producto
+            window.location.href = `../pages/product-view.html`;
+        });
+
+        relatedProductsContainer.appendChild(productDiv);
+    });
+});

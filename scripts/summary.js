@@ -1,36 +1,44 @@
+// summary.js
 document.addEventListener('DOMContentLoaded', function () {
-    // Obtener el contenedor de resumen del pedido
-    const orderContainer = document.querySelector('.order');
+    const orderList = document.getElementById('order-list');
+    const subtotalElement = document.getElementById('subtotal');
+    const discountElement = document.getElementById('discount');
+    const totalPriceElement = document.getElementById('total-price');
 
-    // Función para renderizar el resumen del pedido
     function renderOrderSummary() {
-        // Obtener la información del pedido del localStorage
         const orderData = JSON.parse(localStorage.getItem('order'));
 
-        // Limpiar el contenido actual del contenedor
-        orderContainer.innerHTML = '';
+        orderList.innerHTML = '';
 
-        // Verificar si hay productos en el pedido
         if (orderData) {
-            // Iterar sobre los productos y renderizarlos en el contenedor
+            let subtotal = 0;
+
             Object.values(orderData).forEach(entry => {
                 const product = entry.product;
                 const quantity = entry.quantity;
-                const size = entry.size; // Asegúrate de tener la propiedad 'size' en tu objeto 'entry'
+                const size = entry.size;
+                const productPrice = product.price * quantity;
 
-                // Crear elementos HTML para mostrar cada producto
-                const productElement = document.createElement('div');
-                productElement.textContent = `${product.name} - Quantity: ${quantity} - Size: ${size}`;
+                const listItem = document.createElement('li');
+                listItem.textContent = `${quantity} x ${product.name} - Talla: ${size} - Precio: $${productPrice.toFixed(2)}`;
+                orderList.appendChild(listItem);
 
-                // Agregar el elemento al contenedor
-                orderContainer.appendChild(productElement);
+                subtotal += productPrice;
             });
+
+            let discount = 0;
+            subtotal>=300 ? order.setDiscount(0.4) : order.setDiscount(0);
+            discount=order.getDiscount()
+            const discountAmount = subtotal * discount;
+            let total = subtotal - discountAmount;
+
+            subtotalElement.textContent = `Subtotal: $${subtotal.toFixed(2)}`;
+            discountElement.textContent = `Descuento (${discount*100}%): $${discountAmount.toFixed(2)}`;
+            totalPriceElement.textContent = `Total a Pagar: $${total.toFixed(2)}`;
         } else {
-            // Mostrar un mensaje si no hay productos en el pedido
-            orderContainer.textContent = 'No hay productos en el carrito.';
+            orderList.textContent = 'No hay productos en el carrito.';
         }
     }
 
-    // Llamar a la función para renderizar el resumen del pedido
     renderOrderSummary();
 });

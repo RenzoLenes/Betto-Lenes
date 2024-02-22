@@ -77,6 +77,8 @@ video {
 .products {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+  justify-content: center;
+  align-items: center;
   gap: 20px;
   padding: 60px;
 }
@@ -395,6 +397,7 @@ video {
 
 #main-product-view .top {
   display: flex;
+  width: 100%;
   justify-content: flex-start;
   align-items: flex-start;
   position: relative;
@@ -421,7 +424,7 @@ video {
   overflow: hidden;
 }
 #main-product-view .top .left .slides .inner .slide img {
-  width: auto;
+  width: 60vh;
   display: flex;
   object-fit: cover;
 }
@@ -484,11 +487,16 @@ video {
   color: #fff;
   background: #000;
   height: 49px;
+  font-size: 16px;
   border-radius: 3px;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
+}
+#main-product-view .top .right .add-to-cart:hover {
+  color: #000;
+  background-color: #fff;
 }
 
 

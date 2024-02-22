@@ -122,37 +122,6 @@ class Order {
 
 }
 
-function menuProductos() {
-    let salir = false;
-
-    while (!salir) {
-        products.forEach((product, index) => {
-            console.log(`${index + 1}. ${product.name}: ${product.price}$`);
-        });
-        let opcion = prompt("Elija un producto (o escriba 'salir' para salir, 'resumen' para ver el resumen)");
-
-        switch (opcion.toLowerCase()) {
-            case 'salir':
-                salir = true;
-                order.printProducts();
-                order.calculateTotal();
-                break;
-            case 'resumen':
-                order.printProducts();
-                order.calculateTotal();
-                break;
-            default:
-                let index = parseInt(opcion) - 1;
-                if (!isNaN(index) && index >= 0 && index < products.length) {
-                    order.addProduct(products[index], 1);
-                    console.log(`Producto seleccionado: ${products[index].name}`);
-                } else {
-                    console.log("Opción no válida. Vuelva a intentar.");
-                }
-                break;
-        }
-    }
-}
 
 // Uso de la clase Order
 const order = new Order();
