@@ -138,7 +138,7 @@ document.addEventListener('DOMContentLoaded', function () {
             localStorage.setItem('selectedProduct', JSON.stringify(selectedProduct));
 
             // Redireccionar a la página de vista de producto
-            window.location.href = `../pages/product-view.html`;
+            window.location.href = `/pages/product-view.html`;
         });
 
         relatedProductsContainer.appendChild(productDiv);
