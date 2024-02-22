@@ -50,8 +50,7 @@ products.forEach(product => {
         localStorage.setItem('selectedProduct', JSON.stringify(selectedProduct));
     
         // Redireccionar a la página de vista de producto
-        const repo='';
-        window.location.href = repo + `/pages/product-view.html`;
+        window.location.href = `/pages/product-view.html`;
     });
 
     productsContainer.appendChild(productDiv);
