@@ -139,7 +139,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
             // Redireccionar a la página de vista de producto
        
-            window.location.href =`/pages/product-view.html`;
+            window.location.href =`./pages/product-view.html`;
         });
 
         relatedProductsContainer.appendChild(productDiv);
