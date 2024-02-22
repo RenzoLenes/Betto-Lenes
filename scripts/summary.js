@@ -1,4 +1,3 @@
-// summary.js
 document.addEventListener('DOMContentLoaded', function () {
     const orderList = document.getElementById('order-list');
     const subtotalElement = document.getElementById('subtotal');

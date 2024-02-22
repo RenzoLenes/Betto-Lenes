@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // Recuperar la información del producto del localStorage
     const selectedProduct = JSON.parse(localStorage.getItem('selectedProduct'));
 
-    // Hacer algo con la información del producto, como actualizar la interfaz de usuario
+    
     const productId = selectedProduct.id;
     const productName = selectedProduct.name;
     const productPrice = selectedProduct.price;
@@ -51,11 +51,6 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     });
 
-    // Asignar el evento clic a los botones de tamaño (puedes mantener este código si ya lo has agregado)
-
-    // ... Resto del código
-
-    // Asociar el evento de clic al botón "ADD TO CART"
     // Asociar el evento clic al botón "ADD TO CART"
     const addToCartButton = document.querySelector('.add-to-cart');
     addToCartButton.addEventListener('click', function (event) {
@@ -75,7 +70,6 @@ document.addEventListener('DOMContentLoaded', function () {
             id: productId,
             name: productName,
             price: productPrice,
-            // Otros datos del producto según sea necesario
         };
 
         // Añadir el producto al carrito con la cantidad deseada
@@ -87,7 +81,7 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 document.addEventListener('DOMContentLoaded', function () {
-    // Obtener el contenedor de productos relacionados
+
     const relatedProductsContainer = document.getElementById('related-products-container');
 
     // Función para obtener productos aleatorios excluyendo el producto seleccionado
