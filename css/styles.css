@@ -9,52 +9,85 @@
 }
 
 header {
+  display: flex;
   background-color: #fff;
-  padding: 15px;
   border-bottom: 2px solid #0D519B;
+  align-items: center;
+  padding: 0 1rem 0 1rem;
+}
+header .logo {
+  max-width: 20vh;
 }
 
 #nav {
   display: flex;
+  align-items: center;
+  padding: 1rem;
   justify-content: space-between;
-  align-items: center;
-  color: #0D519B;
-  height: 5vh;
+  width: 100%;
 }
-#nav .left {
-  display: flex;
-  align-items: center;
-}
-#nav .left a {
-  margin-right: 20px;
-  text-decoration: none;
-  color: #0D519B;
-}
-#nav .left a img {
-  max-height: 30px;
-}
+#nav .left,
 #nav .right {
   display: flex;
-  align-items: center;
 }
-#nav .right a {
-  margin-right: 20px;
+#nav .left .nav-list,
+#nav .right .nav-list {
+  display: flex;
+  gap: 1rem;
+  list-style: none;
+}
+#nav .left .nav-list a,
+#nav .right .nav-list a {
   text-decoration: none;
   color: #0D519B;
 }
-#nav button {
-  background-color: transparent;
-  border: none;
-  cursor: pointer;
-  display: flex;
-  align-items: center;
-  color: #0D519B;
-  font-size: 16px;
-}
-#nav button:hover {
-  color: #ffcc00;
+
+.open-menu, .close-menu {
+  display: none;
 }
 
+@media screen and (max-width: 550px) {
+  .open-menu, .close-menu {
+    display: block;
+    border: 0;
+    font-size: 2rem;
+    background-color: transparent;
+    cursor: pointer;
+  }
+  .open-menu, .close-menu {
+    color: #0D519B;
+  }
+  header {
+    justify-content: space-between;
+  }
+  .nav {
+    opacity: 0;
+    visibility: hidden;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: end !important;
+    justify-content: flex-start !important;
+    gap: 1rem;
+    position: fixed !important;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ffffff;
+    padding: 2rem !important;
+    box-shadow: 0 0 0 100vmax rgba(0, 0, 0, 0.5);
+    width: 35vh !important;
+    z-index: 1000;
+    height: 100vh;
+  }
+  .nav.visible {
+    opacity: 1;
+    visibility: visible;
+  }
+  .nav-list {
+    flex-direction: column;
+    align-items: end;
+  }
+}
 .background {
   position: relative;
   width: 100%;
