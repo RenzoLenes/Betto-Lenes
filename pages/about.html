@@ -5,11 +5,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Betto Lenes</title>
-    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Carme&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Carme&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="../css/styles.css">
 </head>
 
@@ -22,29 +21,66 @@
             <div class="left">
                 <ul class="nav-list">
                     <li><a href="../index.html">HOME</a></li>
-                    <li><a href="#">ABOUT</a></li>
-                    <li><a href="#">CONTACT</a></li>
+                    <li><a href="./about.html">ABOUT</a></li>
+                    <li><a href="./contact.html">CONTACT</a></li>
                 </ul>
             </div>
 
             <div class="right">
                 <ul class="nav-list">
                     <li><a href="#">ACCOUNT</a></li>
-                    <li><a href="./bag.html"">BAG</a></li>
+                    <li><a href="./bag.html">BAG</a></li>
                 </ul>
             </div>
         </nav>
     </header>
 
-    <main class="main-bag">
-        <div class="order">
-            <h2>Shopping Bag</h2>
-            <ul id="order-list"></ul>
-            <p id="subtotal">Subtotal: $0.00</p>
-            <p id="discount">Descuento: $0.00</p>
-            <p id="total-price">Total a Pagar: $0.00</p>
+    <section class="about-container">
+        <img class="fondo-about" src="../assets/img/fondoAbout.png" alt="">
+        <div class="first-scheme">
+            <img class="image-scheme" src="../assets/img/first-scheme.png" alt="">
+            <div class="text-container">
+                <h2>ABOUT</h2>
+                <div class="text-content">
+                    <p>Established in 2021 by Renzo Lenes, Betto Lenes stands as a distinguished fashion brand,
+                        specializing in a versatile range of formal and urban attire.
+                    </p>
+                    <p>Located in the vibrant Lima,Peru , our commitment to enduring elegance and inclusivity is
+                        reflected in meticulously crafted garments designed for a diverse clientele.
+                    </p>
+                    <p>Betto Lenes proudly presents a collection transcending formal and urban boundaries, symbolizing
+                        our dedication to timeless fashion and diverse expression.</p>
+                </div>
+            </div>
         </div>
-    </main>
+        <div class="second-scheme">
+            <img class="image-scheme" src="../assets/img/second-scheme.png" alt="">
+            <div class="text-container">
+                <h2>MANUFACTURING</h2>
+                <div class="text-content">
+                    <h3>Modern Production Techniques:
+                    </h3>
+                    <p>Betto Lenes employs advanced production techniques to create each garment, ensuring efficiency
+                        and precision in delivering the latest fashion trends.
+                    </p>
+
+                    <h3>Precision Cutting and Tailoring:
+                    </h3>
+                    <p>Our garments undergo precise cutting for consistent sizing and fit, with meticulous tailoring to
+                        enhance overall quality and aesthetics.
+                    </p>
+
+                    <h3>Quality Assurance:
+                    </h3>
+                    <p>Every garment undergoes rigorous quality checks to meet our high standards for strength,
+                        durability, and overall quality.
+                    </p>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
 
     <footer id="footer">
         <div class="footer-wrapper c-24">
@@ -58,7 +94,7 @@
 
                     <span></span>
                 </div>
-                <div class=" column">
+                <div class="column">
                     <p class="title">Support</p>
 
                     <a href="./contact.html" class="text effect-hover">CONTACT</a>
@@ -101,9 +137,8 @@
     </footer>
 
 
+
     <script src="../scripts/menu-hamburger.js"></script>
-    <script src="../scripts/script.js"></script>
-    <script src="../scripts/summary.js"></script>
 </body>
 
 </html>

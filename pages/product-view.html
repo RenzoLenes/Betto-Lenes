@@ -5,29 +5,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Betto Lenes</title>
+    
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Carme&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link rel="stylesheet" href="../css/styles.css">
 </head>
 
 <body>
     <header>
-        <nav id="nav">
+        <a href="../index.html"><img class="logo" src="../assets/img/logo-betto.png" alt="Logo"></a>
+        <button id="open" class="open-menu"><i class="bi bi-list"></i></button>
+        <nav id="nav" class="nav">
+            <button id="close" class="close-menu"><i class="bi bi-x-lg"></i></button>
             <div class="left">
-                <a href=""><img src="../assets/img/logo-betto.png" alt=""></a>
-                <a href="../index.html">HOME</a>
-                <a href="">ABOUT</a>
-                <a href="">CONTACT</a>
-            </div>
-            <div class="right">
-                <a href="">ACCOUNT</a>
-                <button id="bag">
-                    <span>BAG</span>
-                    <img src="../assets/img/bag.svg" alt="">
-                </button>
+                <ul class="nav-list">
+                    <li><a href="../index.html">HOME</a></li>
+                    <li><a href="#">ABOUT</a></li>
+                    <li><a href="#">CONTACT</a></li>
+                </ul>
             </div>
 
+            <div class="right">
+                <ul class="nav-list">
+                    <li><a href="#">ACCOUNT</a></li>
+                    <li><a href="./bag.html">BAG</a></li>
+                </ul>
+            </div>
         </nav>
     </header>
 
@@ -72,7 +77,7 @@
             <section class="bottom">
                 <h2>YOU MAY ALSO LIKE</h2>
                 <div class="products" id="related-products-container">
-                    
+
                 </div>
             </section>
         </div>
@@ -87,16 +92,16 @@
                 <div class="column">
                     <p class="title">COMPANY</p>
 
-                    <a href="/collections/all" class="text effect-hover">SHOP</a>
+                    <a href="../index.html" class="text effect-hover">SHOP</a>
 
-                    <a href="/pages/about" class="text effect-hover">ABOUT</a>
+                    <a href="./about.html" class="text effect-hover">ABOUT</a>
 
                     <span></span>
                 </div>
                 <div class=" column">
                     <p class="title">Support</p>
 
-                    <a href="#" class="text effect-hover">CONTACT</a>
+                    <a href="./contact.html" class="text effect-hover">CONTACT</a>
 
                     <a href="#" class="text effect-hover">FORUMS</a>
 
@@ -135,21 +140,10 @@
         </div>
     </footer>
 
-    <script>
-        // Obtener el botón por su ID
-        const miBoton = document.getElementById('bag');
-    
-        // Agregar un evento clic al botón
-        miBoton.addEventListener('click', function () {
-            // Redirigir a otra página
-            window.location.href = '../pages/bag.html';
-        });
-    </script>
-
-
+    <script src="./scripts/menu-hamburger.js"></script>
     <script src="../scripts/updateSize.js"></script>
     <script src="../scripts/script.js"></script>
-    
+
 
 </body>
 

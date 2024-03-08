@@ -9,58 +9,64 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Carme&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="stylesheet" href="../css/styles.css">
 </head>
 
 <body>
     <header>
-        <a href="./index.html"><img class="logo" src="./assets/img/logo-betto.png" alt="Logo"></a>
+        <a href="../index.html"><img class="logo" src="../assets/img/logo-betto.png" alt="Logo"></a>
         <button id="open" class="open-menu"><i class="bi bi-list"></i></button>
         <nav id="nav" class="nav">
             <button id="close" class="close-menu"><i class="bi bi-x-lg"></i></button>
             <div class="left">
                 <ul class="nav-list">
-                    <li><a href="./index.html">HOME</a></li>
-                    <li><a href="./pages/about.html">ABOUT</a></li>
-                    <li><a href="./pages/contact.html">CONTACT</a></li>
+                    <li><a href="../index.html">HOME</a></li>
+                    <li><a href="./about.html">ABOUT</a></li>
+                    <li><a href="./contact.html">CONTACT</a></li>
                 </ul>
             </div>
 
             <div class="right">
                 <ul class="nav-list">
                     <li><a href="#">ACCOUNT</a></li>
-                    <li><a href="./pages/bag.html">BAG</a></li>
+                    <li><a href="./bag.html">BAG</a></li>
                 </ul>
             </div>
         </nav>
     </header>
 
-
-
-    <div class="background">
-        <video src="./assets/video/background-video.mp4" autoplay loop muted playsinline></video>
-    </div>
-
-    <section class="wrap-products">
-        <h2>NEW ARRIVALS</h2>
-        <div class="products" id="products-container"></div>
+    <section class="contact-container">
+        <div class="contact-content">
+            <h2>GET IN TOUCH</h2>
+            <p>Have questions about your order? Complete the form below, and a dedicated member of our team will be in
+                touch to address your concerns.</p>
+            <form class="form-contact" action="">
+                <input type="text" id="contact-name" placeholder="NAME">
+                <input type="email" id="contact-email" placeholder="EMAIL">
+                <input type="text" id="contact-subject" placeholder="SUBJECT">
+                <input type="text" id="contact-message" placeholder="MESSAGE">
+                <input type="submit" value="SUBMIT" id="contact-submit">
+            </form>
+        </div>
     </section>
+
+
     <footer id="footer">
         <div class="footer-wrapper c-24">
             <div class="left">
                 <div class="column">
                     <p class="title">COMPANY</p>
 
-                    <a href="./index.html" class="text effect-hover">SHOP</a>
+                    <a href="../index.html" class="text effect-hover">SHOP</a>
 
-                    <a href="./pages/about.html" class="text effect-hover">ABOUT</a>
+                    <a href="./about.html" class="text effect-hover">ABOUT</a>
 
                     <span></span>
                 </div>
                 <div class="column">
                     <p class="title">Support</p>
 
-                    <a href="./pages/contact.html" class="text effect-hover">CONTACT</a>
+                    <a href="./contact.html" class="text effect-hover">CONTACT</a>
 
                     <a href="#" class="text effect-hover">FORUMS</a>
 
@@ -95,14 +101,13 @@
         </div>
         <div class="bottom c-24">
             <p class="text">2024</p>
-            <a class="text" href="#"><img height="30" src="./assets/img/logo-betto.png" alt=""></a>
+            <a class="text" href="#"><img height="30" src="../assets/img/logo-betto.png" alt=""></a>
         </div>
     </footer>
 
 
-    <script src="./scripts/menu-hamburger.js"></script>
-    <script src="./scripts/loadProducts.js"></script>
 
+    <script src="../scripts/menu-hamburger.js"></script>
 </body>
 
 </html>
