@@ -621,6 +621,10 @@ video {
 .contact-container .contact-content .form-contact #contact-submit {
   background-color: #000;
   color: #fff;
+  transition: all 0.22s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+}
+.contact-container .contact-content .form-contact #contact-submit:hover {
+  background-color: rgba(0, 0, 0, 0.358);
 }
 
 @media screen and (max-width: 425px) {
@@ -635,6 +639,97 @@ video {
     width: 18rem;
   }
 }
+.bag-container .order {
+  display: flex;
+  justify-content: space-between;
+  background-color: #F4F4F4;
+}
+.bag-container .order .left {
+  display: flex;
+  flex-direction: column;
+  margin: 4rem;
+  width: 40rem;
+}
+.bag-container .order .left .all-products {
+  background-color: #FFFFFF;
+  margin-bottom: 1rem;
+}
+.bag-container .order .left .all-products h2 {
+  margin: 1.2rem;
+}
+.bag-container .order .left .order-container {
+  background-color: #FFFFFF;
+}
+.bag-container .order .left .order-container .order-product {
+  align-items: center;
+  margin: 1.5rem;
+  display: flex;
+}
+.bag-container .order .left .order-container .order-product img {
+  max-height: 12rem;
+  border: 2px solid black;
+}
+.bag-container .order .left .order-container .order-product .product-detail {
+  margin-left: 1rem;
+}
+.bag-container .order .left .order-container .order-product .product-detail p {
+  margin-bottom: 1.5rem;
+}
+.bag-container .order .left .order-container .order-product .product-detail .delete-product, .bag-container .order .left .order-container .order-product .product-detail .add-product {
+  background-color: #000;
+  color: #FFFFFF;
+  border: 0px;
+  border-radius: 3px;
+  height: 25px;
+  width: 20px;
+  transition: all 0.22s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+}
+.bag-container .order .left .order-container .order-product .product-detail .add-product:hover, .bag-container .order .left .order-container .order-product .product-detail .delete-product:hover {
+  background-color: rgba(0, 0, 0, 0.358);
+}
+.bag-container .order .left .order-container .bill-order {
+  margin: 1.5rem;
+}
+.bag-container .order .right {
+  display: flex;
+  flex-direction: column;
+  margin: 4rem;
+  gap: 1rem;
+}
+.bag-container .order .right .top {
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
+  width: 25rem;
+  gap: 1.5rem;
+  padding: 1.5rem;
+}
+.bag-container .order .right .top p {
+  display: flex;
+  flex-direction: row-reverse;
+}
+.bag-container .order .right .top button {
+  background-color: #000;
+  color: #FFFFFF;
+  border-radius: 2px;
+  height: 45px;
+  transition: all 0.22s cubic-bezier(0.445, 0.05, 0.55, 0.95);
+}
+.bag-container .order .right .top button:hover {
+  background-color: rgba(0, 0, 0, 0.358);
+}
+.bag-container .order .right .bottom {
+  width: 25rem;
+  background-color: #ffffff;
+  padding: 2rem;
+}
+.bag-container .order .right .bottom h2 {
+  padding-bottom: 2rem;
+}
+.bag-container .order .right .bottom img {
+  padding-bottom: 2rem;
+}
+
 
 
 /*# sourceMappingURL=styles.css.map */

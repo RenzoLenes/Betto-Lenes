@@ -19,14 +19,14 @@ class Order {
         return products.find(product => product.id === productId);
     }
 
-    addProduct(product, size, quantity = 1) {
+    addProduct(product, size, quantity = 1,image) {
         const productId = product.id
 
         if (this.validateProductId(productId)) {
             const key = `${productId}-${size}`; // Utilizar productId y size en la clave
             if (!this.products[key]) {
                 this.products[key] = {
-                    product, size, quantity
+                    product, size, quantity,image
                 };
                 console.log(`${quantity} unit(s) of "${product.name}" (Size: ${size}) added to order`);
                 this.saveOrderToLocalStorage();
@@ -35,6 +35,18 @@ class Order {
                 console.log(`${quantity} unit(s) of "${product.name}" (Size: ${size}) added to order`);
                 this.saveOrderToLocalStorage();
             }
+
+        } else {
+            console.log("Id not found")
+        }
+    }
+
+    addProduct1(productId, size, quantity = 1) {
+
+        if (!this.validateProductId(productId)) {
+            const key = `${productId}-${size}`; // Utilizar productId y size en la clave
+                this.products[key].quantity += quantity;
+                this.saveOrderToLocalStorage();
 
         } else {
             console.log("Id not found")

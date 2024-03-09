@@ -47,10 +47,12 @@ products.forEach(product => {
         };
     
         // Convertir el objeto a cadena JSON y almacenarlo en localStorage
+        
         localStorage.setItem('selectedProduct', JSON.stringify(selectedProduct));
-    
+        
         // Redireccionar a la página de vista de producto
-        window.location.href = `../pages/product-view.html`;
+        let ruta=window.location.href = `./pages/product-view.html`;
+        console.log(ruta);
     });
 
     productsContainer.appendChild(productDiv);
