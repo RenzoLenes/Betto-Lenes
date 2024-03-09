@@ -1,4 +1,5 @@
-let moneda = "PEN"
+
+let moneda = "USD"
 let selectedSize = "";
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -9,6 +10,7 @@ document.addEventListener('DOMContentLoaded', function () {
     const productId = selectedProduct.id;
     const productName = selectedProduct.name;
     const productPrice = selectedProduct.price;
+
     let productImage = selectedProduct.image1;
     let productImageHover = selectedProduct.image2;
     const productSize = selectedProduct.size;
@@ -76,6 +78,13 @@ document.addEventListener('DOMContentLoaded', function () {
         // Añadir el producto al carrito con la cantidad deseada
         order.addProduct(selectedProduct,selectedSize, 1);
 
+        Swal.fire({
+            icon: 'success',
+            title: 'Product added to cart',
+            text: `${productName}  ${selectedSize} has been successfully added to the cart.`,
+        });
+        
+        
         console.log(`Producto añadido al carrito:\n${JSON.stringify(selectedProduct, null, 2)}`);
     });
 

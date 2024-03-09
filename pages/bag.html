@@ -40,26 +40,23 @@
         <div class="order">
             <div class="left">
                 <div class="all-products">
-                    <h2>ALL PRODUCTS (n)</h2>
+                    <h2>ALL PRODUCTS</h2>
                 </div>
                 <div class="order-container">
                     <ul id="order-list">
                         <li class="order-product"></li>
-                    </ul>
-                    
-                    <div class="bill-order">
-                        <p id="subtotal">Subtotal: $0.00</p>
-                        <p id="discount">Descuento: $0.00</p>
-                        <p id="total-price">Total a Pagar: $0.00</p>
-                    </div>
-                    
+                    </ul>                    
                 </div>
             </div>
             <div class="right">
                 <div class="top">
-                    <h2>ORDER SUMMARY</h2>
-                    <p>300 PEN</p>
-                    <button>BUY NOW (n)</button>
+                    <div class="bill-order">
+                        <h2>ORDER SUMMARY</h2>
+                        <p id="subtotal">Subtotal: $0.00</p>
+                        <p id="discount">Discount: $0.00</p>
+                        <p id="total-price">Total to pay: $0.00</p>
+                        <button id="buy-now-button">BUY NOW</button>
+                    </div>
                 </div>
                 <div class="bottom">
                     <h2>WE ACCEPT</h2>
@@ -71,18 +68,6 @@
 
         </div>
 
-
-
-        <!--    
-        <div class="order">
-            <h2>Shopping Bag</h2>
-            <ul id="order-list"></ul>
-            <p id="subtotal">Subtotal: $0.00</p>
-            <p id="discount">Descuento: $0.00</p>
-            <p id="total-price">Total a Pagar: $0.00</p>
-        </div>  
-        -->
-        
     </main>
 
     <footer id="footer">
@@ -143,6 +128,7 @@
     <script src="../scripts/menu-hamburger.js"></script>
     <script src="../scripts/script.js"></script>
     <script src="../scripts/summary.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
 
 </html>

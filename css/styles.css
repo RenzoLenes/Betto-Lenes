@@ -42,19 +42,22 @@ header .logo {
   color: #0D519B;
 }
 
-.open-menu, .close-menu {
+.open-menu,
+.close-menu {
   display: none;
 }
 
 @media screen and (max-width: 550px) {
-  .open-menu, .close-menu {
+  .open-menu,
+  .close-menu {
     display: block;
     border: 0;
     font-size: 2rem;
     background-color: transparent;
     cursor: pointer;
   }
-  .open-menu, .close-menu {
+  .open-menu,
+  .close-menu {
     color: #0D519B;
   }
   header {
@@ -577,14 +580,17 @@ video {
 }
 
 @media screen and (max-width: 768px) {
-  .first-scheme, .second-scheme {
+  .first-scheme,
+  .second-scheme {
     flex-direction: column !important;
     text-align: center;
   }
-  .first-scheme .image-scheme, .second-scheme .image-scheme {
+  .first-scheme .image-scheme,
+  .second-scheme .image-scheme {
     width: 100% !important;
   }
-  .first-scheme .text-container, .second-scheme .text-container {
+  .first-scheme .text-container,
+  .second-scheme .text-container {
     width: auto !important;
   }
 }
@@ -673,9 +679,10 @@ video {
   margin-left: 1rem;
 }
 .bag-container .order .left .order-container .order-product .product-detail p {
-  margin-bottom: 1.5rem;
+  margin-bottom: 1.4rem;
 }
-.bag-container .order .left .order-container .order-product .product-detail .delete-product, .bag-container .order .left .order-container .order-product .product-detail .add-product {
+.bag-container .order .left .order-container .order-product .product-detail .delete-product,
+.bag-container .order .left .order-container .order-product .product-detail .add-product {
   background-color: #000;
   color: #FFFFFF;
   border: 0px;
@@ -684,11 +691,9 @@ video {
   width: 20px;
   transition: all 0.22s cubic-bezier(0.445, 0.05, 0.55, 0.95);
 }
-.bag-container .order .left .order-container .order-product .product-detail .add-product:hover, .bag-container .order .left .order-container .order-product .product-detail .delete-product:hover {
+.bag-container .order .left .order-container .order-product .product-detail .add-product:hover,
+.bag-container .order .left .order-container .order-product .product-detail .delete-product:hover {
   background-color: rgba(0, 0, 0, 0.358);
-}
-.bag-container .order .left .order-container .bill-order {
-  margin: 1.5rem;
 }
 .bag-container .order .right {
   display: flex;
@@ -704,18 +709,23 @@ video {
   gap: 1.5rem;
   padding: 1.5rem;
 }
-.bag-container .order .right .top p {
+.bag-container .order .right .top .bill-order h2 {
+  margin-bottom: 1rem;
+}
+.bag-container .order .right .top .bill-order p {
   display: flex;
   flex-direction: row-reverse;
 }
-.bag-container .order .right .top button {
+.bag-container .order .right .top .bill-order button {
   background-color: #000;
+  margin-top: 1.5rem;
+  width: 100%;
   color: #FFFFFF;
   border-radius: 2px;
   height: 45px;
   transition: all 0.22s cubic-bezier(0.445, 0.05, 0.55, 0.95);
 }
-.bag-container .order .right .top button:hover {
+.bag-container .order .right .top .bill-order button:hover {
   background-color: rgba(0, 0, 0, 0.358);
 }
 .bag-container .order .right .bottom {
