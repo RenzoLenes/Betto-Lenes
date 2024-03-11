@@ -466,10 +466,6 @@ video {
   display: flex;
   object-fit: cover;
 }
-#main-product-view .top .left .slides .inner:first-child {
-  position: relative;
-  z-index: 10000;
-}
 #main-product-view .top .right {
   margin: 0.5rem;
 }
