@@ -480,8 +480,7 @@ video {
     .top {
         display: flex;
         width: 100%;
-        justify-content: flex-start;
-        align-items: flex-start;
+        justify-content: space-between;
         position: relative;
         margin-top: 2rem;
         margin-bottom: 2rem;
@@ -506,20 +505,22 @@ video {
                         overflow: hidden;
 
                         img {
-                            width: 60vh;
+                            width: 20rem;
                             display: flex;
                             object-fit: cover;
                         }
                     }
+                    
+                }
+                .inner:first-child{
+                    position: relative;
+                    z-index: 10000;
                 }
             }
         }
 
         .right {
-            width: 25vw;
-            margin-left: 6vw;
-            top: 20px;
-
+            margin: 0.5rem;
             .header {
                 margin-bottom: 1.5vw;
                 width: 70%;
@@ -600,7 +601,11 @@ video {
             }
         }
     }
-
+    .bottom{
+        h2{
+                text-align: center;
+        }
+    }
 }
 
 .about-container {
@@ -666,6 +671,23 @@ video {
 }
 
 @media screen and (max-width:768px) {
+    #main-product-view{
+        .view-product{
+            .top{
+                flex-direction: column;
+            }
+            .bottom{
+                .products{
+                    margin: 2rem;
+                    .product{
+                        img{
+                            max-width: 15rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
     .bag-container {
         .order {
             width: 50%;
