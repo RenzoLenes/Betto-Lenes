@@ -129,21 +129,24 @@ video {
 }
 
 .products {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(380px, 1fr));
+    display: flex;
+    flex-wrap: wrap;
     justify-content: center;
     align-items: center;
-    gap: 20px;
-    padding: 60px;
+    gap: 2rem;
+    margin: 5rem;
 }
 
 .product {
     position: relative;
     overflow: hidden;
+    .product-price{
+        text-transform: uppercase;
+    }
 }
 
 .product img {
-    max-width: 100%;
+    max-width: 25rem;
     height: auto;
     margin-bottom: 10px;
     transition: opacity 0.3s ease-in-out;
@@ -663,6 +666,28 @@ video {
 }
 
 @media screen and (max-width:768px) {
+    .bag-container {
+        .order {
+            width: 50%;
+            flex-direction: column;
+            .right{
+                .bottom{
+                    img{
+                        max-width: 20rem;
+                    }
+                }
+            }
+        }
+    }
+    .wrap-products{
+        .products{
+            margin: 1rem;
+            .product img {
+                max-width: 18rem;
+            }
+        }
+    }
+    
 
     .first-scheme,
     .second-scheme {
@@ -680,7 +705,10 @@ video {
 }
 
 
+
+
 .contact-container {
+    
     margin: 8rem;
 
     .contact-content {
@@ -729,6 +757,36 @@ video {
 }
 
 @media screen and (max-width:425px) {
+    .bag-container{
+        .order{
+            .left{
+                .order-container{
+                    #order-list{
+                        .order-product{
+                            img{
+                                max-width: 6rem;
+                            }
+                            .product-detail{
+                                font-size: 10px;
+
+                                .bi{
+                                    font-size: 12px;
+                                }
+
+                            }
+                        }
+                    }
+                }
+            }
+            .right{
+                .bottom{
+                    img{
+                        max-width: 13rem;
+                    }
+                }
+            }
+        }
+    }
     .contact-container {
         .contact-content {
             text-align: center;
@@ -748,17 +806,19 @@ video {
 }
 
 .bag-container {
-
+    width: 100%;
+    background-color: #F4F4F4;
     .order {
+        width: 100%;
         display: flex;
         justify-content: space-between;
-        background-color: #F4F4F4;
+        gap: 2rem;
+        padding: 2rem;
 
         .left {
             display: flex;
             flex-direction: column;
-            margin: 4rem;
-            width: 40rem;
+
 
             .all-products {
                 background-color: #FFFFFF;
@@ -770,15 +830,20 @@ video {
             }
 
             .order-container {
+                #order-list{
+                    display: flex;
+                    flex-direction: column;
+                    align-content: center;
+                }
                 background-color: #FFFFFF;
-
                 .order-product {
+                    
                     align-items: center;
                     margin: 1.5rem;
                     display: flex;
 
                     img {
-                        max-height: 12rem;
+                        max-height: 10rem;
                         border: 2px solid black;
                     }
 
@@ -786,7 +851,7 @@ video {
                         margin-left: 1rem;
 
                         p {
-                            margin-bottom: 1.4rem;
+                            margin-bottom: 0.5rem;
                         }
 
                         .delete-product,
@@ -814,14 +879,12 @@ video {
         .right {
             display: flex;
             flex-direction: column;
-            margin: 4rem;
             gap: 1rem;
 
             .top {
                 display: flex;
                 flex-direction: column;
                 background-color: #ffffff;
-                width: 25rem;
                 gap: 1.5rem;
                 padding: 1.5rem;
 
@@ -852,9 +915,9 @@ video {
             }
 
             .bottom {
-                width: 25rem;
+
                 background-color: #ffffff;
-                padding: 2rem;
+                padding: 1.5rem;
 
                 h2 {
                     padding-bottom: 2rem;
